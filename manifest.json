@@ -1,0 +1,19 @@
+{
+    "name": "Battery Life",
+    "description": "Get Notified once your device hits a certain percentage to prevent destroying your battery",
+    "version": "6.9",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["notifications"],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+          "16": "/images/16.png",
+          "32": "/images/32.png",
+          "48": "/images/48.png",
+          "128": "/images/128.png"
+        }
+    }
+}

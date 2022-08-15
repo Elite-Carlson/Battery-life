@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: 'Nunito-Medium';
+        }
+        @font-face {
+            font-family: 'Nunito-Medium';
+            src: url(Nunito-Medium.ttf);
+        }
+        .container{
+            width: 250px;
+            height: 250px;
+            padding: 25px 15px 25px 15px;
+            background-color: black;
+        }
+        .top{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: none;
+        }
+        .settings{
+            display: block;
+            width: 22px;
+            height: 22px;
+            background-image: url(setting.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out 0s;
+        }
+        .settings:hover{
+            transform: rotate(45deg);
+            transition: all 0.3s ease-in-out 0s;
+        }
+        .time{
+            display: flex;
+            align-items: center;
+            background-color: none;
+            color: white;
+            font-weight: 500;
+            font-size: 16px;
+        }
+        .status{
+            padding: 6px;
+            display: flex;
+            justify-content: center;
+            background-color: none;
+            color: white;
+        }
+        .progress{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(rgb(255, 255, 255) 30deg,rgba(255, 255, 255, 0.137) 0deg);
+        }
+        .progress::after{
+            position: absolute;
+            content: '';
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            background-color: black;
+        }
+        .info{
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .info .logo{
+            display: block;
+            width: 16px;
+            height: 16px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url(16.png);
+        }
+        .info .percentage{
+            font-size: 45px;
+        }
+        .info span{
+            font-size: 22px;
+        }
+        .info .batterystatus{
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.418);
+        }
+    </style>
+    <div class="container">
+        <div class="top">
+            <div class="settings"></div>
+            <div class="time">
+                <p class="hour">00</p>
+                <p class="seperater">:</p>
+                <p class="minute">00</p>
+            </div>
+        </div>
+        <div class="status">
+            <div class="progress">
+                <div class="info">
+                    <div class="logo"></div>
+                    <div style="display: flex; align-items:baseline;">
+                        <p class="percentage">69</p>
+                        <span>%</span>
+                    </div>
+                    <p class="batterystatus">Charging..</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</head>
+<body>
+    <script src="background.js"></script>
+</body>
+</html>
