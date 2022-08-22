@@ -16,6 +16,14 @@
             src: url(Nunito-Medium.ttf);
         }
         .container{
+            display: block;
+            width: 250px;
+            height: 250px;
+            padding: 25px 15px 25px 15px;
+            background-color: black;
+        }
+        .container2{
+            display: none;
             width: 250px;
             height: 250px;
             padding: 25px 15px 25px 15px;
@@ -32,6 +40,16 @@
             width: 22px;
             height: 22px;
             background-image: url(setting.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out 0s;
+        }
+        .previous{
+            display: block;
+            width: 22px;
+            height: 22px;
+            background-image: url(previous.png);
             background-repeat: no-repeat;
             background-size: cover;
             cursor: pointer;
@@ -120,9 +138,41 @@
                 </div>
             </div>
         </div>
+    </div><br>
+    <div class="container2">
+        <div class="top">
+            <div class="previous"></div>
+        </div>
     </div>
 </head>
 <body>
     <script src="background.js"></script>
+    <script>
+        function get(elementname){
+            const firstindex = elementname.split("")[0];
+            const errormsgclass = 'DOM Element with class: '+elementname+' does not exist double check';
+            const errormsgid = 'DOM Element with id: '+elementname+' does not exist double check';
+            if (firstindex === '.') {
+                const domelement = document.querySelector(''+elementname);
+                if (domelement == null) {
+                    return(errormsgclass);
+                } else {
+                    return(domelement);   
+                }
+            } else if(firstindex != '.'){
+                const domelement = document.getElementById(''+elementname);
+                if (domelement == null) {
+                    return(errormsgid);
+                } else {
+                    return(domelement);   
+                }
+            }
+        }
+        const container1 = get('.container');
+        const container2 = get('.container2');
+        const settingsbtn = get('.settings');
+        const previous = get(".previous");
+        console.log(container2);
+    </script>
 </body>
 </html>
